@@ -16,9 +16,17 @@
 ; (setq mac-command-modifier 'control)
 ; (setq mac-control-modifier 'super)
 
-;;; Tab Settings
-(setq tab-width 4)
-(setq indent-tabs-mode t)
+;;; Smart Tabs
+(setq-default tab-width 4)
+(setq-default indent-tabs-mode t)
+(prelude-require-packages '(smart-tabs-mode))
+(smart-tabs-insinuate 'c 'c++ 'java 'javascript 'python 'ruby 'nxml)
+
+;;; Whitespace
+(setq whitespace-style '(face empty trailing lines-tail space-after-tab
+							  indentation space-before-tab))
+(whitespace-toggle-options '(tabs))
+(global-whitespace-toggle-options '(tabs))
 
 ;;; Use redcarpet for Markdown
 (defun markdown-custom ()
@@ -26,6 +34,10 @@
   (setq markdown-command "redcarpet --smarty") ;  TODO: pandoc
   (setq markdown-enable-math t))
 (add-hook 'markdown-mode-hook '(lambda () (markdown-custom)))
+
+;;; Groovy
+(prelude-require-packages '(groovy-mode))
+(add-to-list 'auto-mode-alist '("\\.gradle\\'" . groovy-mode))
 
 (provide 'personal)
 ;;; personal.el ends here
