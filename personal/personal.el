@@ -25,8 +25,11 @@
 ;;; Whitespace
 (setq whitespace-style '(face empty trailing lines-tail space-after-tab
 							  indentation space-before-tab))
-(whitespace-toggle-options '(tabs))
-(global-whitespace-toggle-options '(tabs))
+
+;;; Fill Column Indicator
+(setq fill-column 80) ; match whitespace-line-column and standard of 80, not 70
+(prelude-require-package 'fill-column-indicator)
+(add-hook 'prog-mode-hook 'fci-mode)
 
 ;;; Use redcarpet for Markdown
 (defun markdown-custom ()

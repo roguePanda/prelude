@@ -9,11 +9,12 @@
 
 ;;; Code:
 
+; http://mplus-fonts.sourceforge.jp/mplus-outline-fonts/index-en.html
 (when (eq system-type 'darwin)
-  (set-face-attribute 'default nil :family "DejaVu Sans Mono")
+  (set-face-attribute 'default nil :family "M+ 1mn")
 
   ;; default font size (point * 10)
-  (set-face-attribute 'default nil :height 140))
+  (set-face-attribute 'default nil :height 150))
 
 (provide 'font)
 ;;; font.el ends here
