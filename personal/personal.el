@@ -42,5 +42,11 @@
 (prelude-require-packages '(groovy-mode))
 (add-to-list 'auto-mode-alist '("\\.gradle\\'" . groovy-mode))
 
+;;; TOML
+(prelude-require-package 'toml-mode)
+
+;;; Tup
+(prelude-require-package 'tup-mode)
+
 (provide 'personal)
 ;;; personal.el ends here
