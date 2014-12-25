@@ -9,6 +9,9 @@
 ; Use arrow keys. We have them for a reason.
 (setq prelude-guru nil)
 
+; Helm Everywhere! (why not?)
+(require 'prelude-helm-everywhere)
+
 ;;; Always show line numbers
 (global-linum-mode 1)
 
