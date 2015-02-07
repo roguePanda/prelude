@@ -51,5 +51,8 @@
 ;;; Tup
 (prelude-require-package 'tup-mode)
 
+;;; Salt
+(add-to-list 'auto-mode-alist '("\\.sls\\'" . yaml-mode))
+
 (provide 'personal)
 ;;; personal.el ends here
